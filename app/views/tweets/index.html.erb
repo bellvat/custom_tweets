@@ -1,12 +1,7 @@
-require 'net/http'
-
 <h1> Customize your favorite tweets here <h1>
-<% result = Net::HTTP.get(URI.parse('https://stream.twitter.com/1.1/statuses/filter.json?follow=tylercowen')) %>
-<p><%= result %></p>
-
-
-# Exchange our oauth_token and oauth_token secret for the AccessToken instance.
-
-# use the access token as an agent to get the home timeline
-<%response = @access_token.request(:get, "https://api.twitter.com/1.1/statuses/home_timeline.json") %>
-<%= response %>
+<script>
+(function(){
+  var parsed = <%= @parsed %>
+  console.log(parsed)
+})
+</script>
