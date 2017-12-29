@@ -3,7 +3,7 @@ class TweetsController < ApplicationController
 
   def index
     content = @token.request(:get, "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=monicasiraa")
-    @parsed = JSON.parse(content.body.replace("&quot",'"'));
+    @parsed = JSON.parse(content.body)
     #@parsed = JSON.parse(content.body)
   end
 
