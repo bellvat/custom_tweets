@@ -1,3 +1,9 @@
-<h1> Customize your favorite tweets here <h1>
-
-<%= @parsed %>
+<h1> My list of tweets (｡◕‿◕｡) <h1>
+<h4>
+  <% @parsed.each_with_index do |t, ind| %>
+    <% count = t["user"]["statuses_count"] - ind %>
+    <%= "No. #{count} #{t["text"]}" %>
+    <br/>
+    <br/>
+  <% end %>
+</h4>
